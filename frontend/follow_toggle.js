@@ -3,9 +3,9 @@ class FollowToggle {
 
   constructor ($el, options) {
     this.userId = $el.data("user");
-    this.followState = $el.data("follows");
+    // this.followState = $el.data("follows");
     this.$el = $el;
-    this.followState = (this.$el.data("initial-follow-state") ||
+    this.followState = (this.$el.data("follows") ||
     options.followState);
     this.render();
     this.handleClick();
