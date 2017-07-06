@@ -6,8 +6,8 @@ class FollowToggle {
     this.$el = $el;
     this.followState = ($el.data("follows") ||
     options.followState);
-    console.log(this.userId);
-    console.log(this.followState);
+    // console.log(this.userId);
+    // console.log(this.followState);
     this.render();
     this.handleClick();
   }
@@ -24,10 +24,10 @@ class FollowToggle {
 
 
   handleClick(){
-    console.log('yea');
+    // console.log('yea');
     this.$el.click(e => {
       this.$el.prop("disabled", true);
-      console.log(this.$el);
+      // console.log(this.$el);
       e.preventDefault();
       if(this.followState === 'Follow'){
         APIUtil.followUser(this).then(() => {

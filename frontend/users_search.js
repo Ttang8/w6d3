@@ -10,9 +10,9 @@ class UsersSearch {
   }
 
   renderResults(users){
-    console.log(this.$ul);
+    // console.log(this.$ul);
     this.$ul.empty();
-    console.log (users);
+    // console.log (users);
     users.forEach((user)=>{
 
       const $li = $(`<li><a href="/users/${user.id}">${user.username}</a></li>`);
@@ -27,10 +27,10 @@ class UsersSearch {
 
   handleInput(){
     this.$el.on('input', e => {
-      console.logs(e);
+      // console.logs(e);
       e.preventDefault();
       APIUtil.searchUsers(this.$input.val()).then((arg)=> {
-        console.log(arg);
+        // console.log(arg);
         this.renderResults(arg);
       });
     });
