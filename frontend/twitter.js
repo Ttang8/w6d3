@@ -11,7 +11,4 @@ $(() => {
   $userSearch.each((Youaremeaningless, search)=>{
     new UsersSearch($(search));
   });
-
-
-
 });

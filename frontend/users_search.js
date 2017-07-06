@@ -12,17 +12,22 @@ class UsersSearch {
   renderResults(users){
     console.log(this.$ul);
     this.$ul.empty();
+    console.log (users);
     users.forEach((user)=>{
+
       const $li = $(`<li><a href="/users/${user.id}">${user.username}</a></li>`);
-      // const $follow = $(`<button class="follow-toggle"></button>`);
-      // $li.append($follow);
+      const $follow = $(`<button class="follow-toggle"></button>`);
+      const options = {followState: user.followed ? 'Unfollow' : 'Follow',
+      userId: user.id};
+      new FollowToggle($follow,options);
+      $li.append($follow);
       this.$ul.append($li);
     });
   }
 
   handleInput(){
     this.$el.on('input', e => {
-      // console.logs(e);
+      console.logs(e);
       e.preventDefault();
       APIUtil.searchUsers(this.$input.val()).then((arg)=> {
         console.log(arg);
