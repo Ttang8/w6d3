@@ -14,8 +14,8 @@ class UsersSearch {
     this.$ul.empty();
     users.forEach((user)=>{
       const $li = $(`<li><a href="/users/${user.id}">${user.username}</a></li>`);
-      const $follow = $(`<button class="follow-toggle"></button>`);
-      $li.append($follow);
+      // const $follow = $(`<button class="follow-toggle"></button>`);
+      // $li.append($follow);
       this.$ul.append($li);
     });
   }
