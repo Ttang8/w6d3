@@ -19,14 +19,8 @@
 </ul> -->
 
 <nav class="users-search">
-  <input type="text"> </input>
+  <input class='search' type="text"> </input>
   <ul class="users">
-    <% @users.each do |user| %>
-    <li>
-      <%= link_to user.username, user_url(user) %>
-      <%= render "follows/form", user:user %>
-    </li>
-    <% end %>
   </ul>
 
   <input type="submit" value="Search Users!"> </input>
